@@ -146,7 +146,7 @@ n_ciphertext = (
     "GOFGGGVAQFGIEZLTUS"
 )
 
-# Each group uses the same key letter.
+
 groups = [n_ciphertext[i::4] for i in range(4)]
 
 key = ""
@@ -156,7 +156,6 @@ for i, group in enumerate(groups):
     ranked = counter(group)
     most_frequent = ranked[0][0]
 
-    # Assume the most frequent ciphertext letter represents E.
     shift = (alp.index(most_frequent) - alp.index("E")) % 26
     key += alp[shift]
 
